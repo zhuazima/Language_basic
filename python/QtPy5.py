@@ -16,7 +16,7 @@ class Window(QMainWindow):
         # height of window
         self.w_height = 400
         # setting geometry
-        self.setGeometry(100, 100, self.w_width, self.w_height)
+        self.setGeometry(100, 600, self.w_width, self.w_height)
 
         # creating a board object
         self.board = Board(self)
@@ -27,7 +27,7 @@ class Window(QMainWindow):
 
         self.statusbar = self.statusBar()
         # adding border to the status bar
-        self.statusbar.setStyleSheet("border : 2px solid black;")
+        self.statusbar.setStyleSheet("border : 2px solid orange;")
         # calling showMessage method when signal received by board
         self.board.msg2statusbar[str].connect(self.statusbar.showMessage)
         self.show()
@@ -38,7 +38,7 @@ class Board(QFrame):
     # creating signal object
     msg2statusbar = pyqtSignal(str)
     # speed of the snake
-    SPEED = 80
+    SPEED = 150
     # block width and height
     WIDTHINBLOCKS = 60
     HEIGHTINBLOCKS = 40
@@ -107,25 +107,25 @@ class Board(QFrame):
 
         # left = 1 / righr = 2 / up = 4/ down =3
         # if left key pressed
-        if key == Qt.Key_Left:
+        if key == Qt.Key_A or key == Qt.Key_Left:
             # if direction is not right
             if self.direction != 2:
                 # set direction to left
                 self.direction = 1
         # if right key is pressed
-        elif key == Qt.Key_Right:
+        elif key == Qt.Key_D or key == Qt.Key_Right:
             # if direction is not left
             if self.direction != 1:
                 # set direction to right
                 self.direction = 2
         # if down key is pressed
-        elif key == Qt.Key_Down:
+        elif key == Qt.Key_S or key == Qt.Key_Down:
             # if direction is not up
             if self.direction != 4:
                 # set direction to down
                 self.direction = 3
         # if up key is pressed
-        elif key == Qt.Key_Up:
+        elif key == Qt.Key_W or key == Qt.Key_Up:
             # if direction is not down
             if self.direction != 3:
                 # set direction to up
