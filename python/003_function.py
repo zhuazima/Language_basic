@@ -54,16 +54,16 @@
 
 
 
-#可变参数
-def calc(*numbers):
-    sum = 0
-    for n in numbers:
-        sum = sum + n * n
-    return sum
+# #可变参数
+# def calc(*numbers):
+#     sum = 0
+#     for n in numbers:
+#         sum = sum + n * n
+#     return sum
 
-nums = [1, 2, 3]
+# nums = [1, 2, 3]
 
-print(calc(*nums))
+# print(calc(*nums))
 
 
 
@@ -75,6 +75,14 @@ print(calc(*nums))
 
 
 
+import random
+
+# 生成三个1000以内的随机数
+random_numbers = [random.randint(1, 1000) for _ in range(3)]
+
+# 打印生成的随机数
+for num in random_numbers:
+    print(num)
 
 
 

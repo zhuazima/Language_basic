@@ -1,40 +1,40 @@
-//#include <iostream>
-//using namespace std;
-//
-//
-//struct Prarent
-//{
-//	int age;
-//	float height;
-//};
-//
-//class cStu
-//{
-//public:
-//	int arr[5];
-//	Prarent sPa;
-//
-//	cStu(Prarent st):sPa(st)	//ÓÃÐÎ²Î¸øÀàµÄ³ÉÔ±³õÊ¼»¯
-//	{
-//		memset(arr, 0, sizeof(int) * 5);
-//	}
-//
-//};
-//
-//int main()
-//{	
-//	Prarent sPa1 = { 18,180.12f };
-//
-//	cStu St(sPa1);	//´«µÝ²ÎÊý¸ø¹¹Ôìº¯Êý
-//	for (int i = 0;i < 5;i++)
-//	{
-//		cout << St.arr[i] << endl;
-//	}
-//
-//	cout << St.sPa.age << endl << St.sPa.height << endl;
-//
-//
-//
-//
-//	return 0;
-//}
+#include <iostream>
+using namespace std;
+
+
+struct Prarent
+{
+	int age;
+	float height;
+};
+
+class cStu
+{
+public:
+	int arr[5];
+	Prarent sPa;
+
+	cStu(Prarent st):sPa(st)	//ï¿½ï¿½ï¿½Î²Î¸ï¿½ï¿½ï¿½Ä³ï¿½Ô±ï¿½ï¿½Ê¼ï¿½ï¿½
+	{
+		memset(arr, 0, sizeof(int) * 5);
+	}
+
+};
+
+int main()
+{	
+	Prarent sPa1 = { 18,180.12f };
+
+	cStu St(sPa1);	//ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½
+	for (int i = 0;i < 5;i++)
+	{
+		cout << St.arr[i] << endl;
+	}
+
+	cout << St.sPa.age << endl << St.sPa.height << endl;
+
+
+
+
+	return 0;
+}

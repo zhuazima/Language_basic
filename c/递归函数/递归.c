@@ -2,7 +2,7 @@
 //#include <stdlib.h>
 //
 //
-////µÝ¹éº¯Êý
+////ï¿½Ý¹éº¯ï¿½ï¿½
 //int fun(void)
 //{
 //	printf("i am fun");
