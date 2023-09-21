@@ -4,15 +4,11 @@
 #include <memory.h>
 
 
-
-
 int fun(void)
 {
-
 	printf("hello");
 	return 0;
 }
-
 
 int main(void)
 {
@@ -25,13 +21,11 @@ int main(void)
 
 	for( i = 0;i < 5;i ++ )
 	{
-		(*p)[i] = 0;
+		(*p)[i] = i;
 		printf("%d\n", (*p)[i]);
 
 	}
-
 	free(p);
-
 
 	//二维数组
 	int(*p1)[2][3] = (int(*)[2][3])malloc(sizeof(int) * 2 * 3);
@@ -40,7 +34,7 @@ int main(void)
 	{
 		for (j = 0;j < 3;j++)
 		{
-			(*p1)[i][j] = 1;
+			(*p1)[i][j] = j + 1;
 			printf("%d\n", (*p1)[i][j]);
 
 		}
@@ -48,18 +42,7 @@ int main(void)
 	}
 	free(p1);
 
-
-
 	//函数名首先理解为是一个变量，这个变量里面存的是什么呢？是它自己的地址
 	printf("%p,%p\n", fun, &fun);
-
-
-
 	return 0;
-
-
-
-
-
-
 }

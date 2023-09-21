@@ -7,8 +7,5 @@ int main( void )
 	ch = getchar();
 	printf("%d\n", ch);
 
-
-
-
 	return 0;
 }

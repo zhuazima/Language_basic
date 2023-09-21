@@ -6,7 +6,7 @@
 
 int main()
 {
-	printf("%d£¬%d", sum(2, 3), mul(4, 5));
+	printf("%d,%d", sum(2, 3), mul(4, 5));
 	
 	return 0;
 }

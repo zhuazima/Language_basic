@@ -20,20 +20,15 @@ int main(void)
 	struct node no = {2019,"wankunpeng",18,180};
 	struct node no1;
 
-	//写
+
 	FILE* pFile = fopen("qwe.txt", "w");
 	fwrite(&no, sizeof(no), 1, pFile);
 
-	//关闭保存
 	fclose(pFile);
 
-
-
-	//读
 	pFile = fopen("qwe.txt", "r");
 	fread(&no1, sizeof(no), 1, pFile);
 
-	//关闭保存
 	fclose(pFile);
 
 

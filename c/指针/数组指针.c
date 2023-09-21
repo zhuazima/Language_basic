@@ -1,20 +1,12 @@
-//#include<stdio.h>
-//#include<stdlib.h>
-//
-//int main()
-//{
-//
-//	int a[5] = {1,2,3,4,5};
-//	int(*p)[5] = &a;
-//
-//	//这里其实是可以用下标操作的
-//	//printf("%d", p[0][2]);
-//
-//	//或者用通常的指针操作,注意：[]下标运算符的优先级比*高
-	//这里注意啊，数组指针的 *p才等于数组名
-//	printf("%d", (*p)[2]);
-//
-//
-//
-//	return 0;
-//}
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+
+	int a[5] = {1,2,3,4,5};
+	int(*p)[5] = &a;
+
+	printf("%d", (*p)[2]);
+	return 0;
+}
