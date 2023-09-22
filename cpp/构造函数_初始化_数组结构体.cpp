@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 
@@ -14,7 +15,7 @@ public:
 	int arr[5];
 	Prarent sPa;
 
-	cStu(Prarent st):sPa(st)	//���βθ���ĳ�Ա��ʼ��
+	cStu(Prarent st):sPa(st)
 	{
 		memset(arr, 0, sizeof(int) * 5);
 	}
@@ -25,7 +26,7 @@ int main()
 {	
 	Prarent sPa1 = { 18,180.12f };
 
-	cStu St(sPa1);	//���ݲ��������캯��
+	cStu St(sPa1);
 	for (int i = 0;i < 5;i++)
 	{
 		cout << St.arr[i] << endl;

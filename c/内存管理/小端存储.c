@@ -1,14 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// //a way to test if the system is Little Endian
+// int main(void)
+// {
+// 	int num = 0x01;
+//     unsigned char * pch = (unsigned char *)(&num);
+    
+// 	if(*pch == 0x01)
+// 	{
+//        printf("little endian \r\n");
+// 	}
+// 	else
+// 	{
+//        printf("big endian \r\n");
+// 	}
 
-//所谓小端存储就是，低地址存低数据位的数据
-//这个例子，如果是大端存储的话，应该是先打印 12  34  56  78
-//
-int main(void)
+// }
+
+//another way to test if the system is Little Endian
+int main()
 {
-	int a = 0x12345678;
-	char* p = (char*)&a;
-	printf("%x,%p\n%x,%p\n%x,%p\n%x,%p\n", p[0], &p[0], p[1], &p[1], p[2], &p[2], p[3], &p[3]);
+	union test_endian
+	{
+		int  test_num;
+		char test_char;
+	};
+	
+    union test_endian test_u;
+	test_u.test_num = 0x01;
+
+	if(test_u.test_char == 0x01)
+	{
+		printf("little endian \r\n");
+	}
+	else
+	{
+        printf("big endian \r\n");
+	}
+
 	return 0;
 }

@@ -5,7 +5,7 @@ union Un
 {
     struct 
     {
-        unsigned char   :3;
+        unsigned char a :3;
         unsigned char b :3;
         unsigned char c :5;
     };
@@ -22,9 +22,12 @@ int main(void)
     
     un1.test[1] = 0;
     un1.test[0] = 0;
-    un1.c = 16;
+    un1.a = 0x03;
+    un1.c = 0x10;
+    
 
-	printf("%d\n\n\n%x\n%x\n",size,un1.test[0], un1.test[1]);
+	printf("\n %d\n 0x%x\n 0x%x\n",size,un1.test[0], un1.test[1]);
 
 	return 0;
 }
+
