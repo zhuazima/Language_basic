@@ -8,33 +8,29 @@ public:
 	float height;
 	int* p;
 
-	cStu()//���캯��
+	cStu()
 	{
-		this->age = 18;//��ʵ����Ҫдthis �ģ�ֻ��Ϊ����ϰһ��
+		this->age = 18;
 		height = 180.1f;
 		p = new int ;
 	}
 
-	//ע�͵������Ĭ�Ͽ������죬��������ʱ���ظ��ͷ��ڴ棬��ɱ���
-	cStu(const cStu& St)//��������
+	cStu(const cStu& St)
 	{
 		age = St.age;
 		height = St.height;
 		p = new int;
 	}
 
-	~cStu()//��������
+	~cStu()
 	{
 		delete(p);
 	}
 
 };
 
-//�ú������⿽������
-cStu& fun(cStu& St)	//���ض��������
+cStu& fun(cStu& St)
 {
-	//����ֱ�Ӹ������Ա��ֵ������
-
 	return St;
 }
 
@@ -43,14 +39,14 @@ int main()
 	cStu St;
 	cout << St.age << "  " << St.height << endl;
 
-	cStu St1(St);//����ÿ������죬��ʵ���Ǻ���������
+	cStu St1(St);
 	cout << St1.age << "  " << St1.height << endl;
 
-	cStu St2 = St;//����ÿ�������
+	cStu St2 = St;
 	cout << St2.age << "  " << St2.height << endl;
 
-	cStu* p = new cStu(St);//����ÿ�������
-	delete(p);//�����Ҫ���˰�
+	cStu* p = new cStu(St);
+	delete(p);
 
 
 	return 0;

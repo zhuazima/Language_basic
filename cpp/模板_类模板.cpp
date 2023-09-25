@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-//���캯��������������
 template <typename T>
 class cA
 {
@@ -13,7 +12,6 @@ public:
 	}
 };
 
-//���캯�������� ����
 template <typename TT>
 class cB
 {
@@ -25,7 +23,6 @@ public:
 	}
 };
 
-//���캯�����������
 template <typename TT ,typename TTT>
 class cC
 {
@@ -40,7 +37,7 @@ public:
 
 int main()
 {
-	cA<int> cAa;//��ģ��Ĳ����б�
+	cA<int> cAa;
 	cout << cAa.a << endl;
 
 	cB<int> cBbb(13);
