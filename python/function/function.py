@@ -1,5 +1,3 @@
-
-
 # #调用函数
 # print(abs(-125))
 # print(max(1,5,10,125))
@@ -15,7 +13,6 @@
 
 # print(my_abs('q'))
 
-
 # import math
 # def move(x, y, step, angle=0):
 #     nx = x + step * math.cos(angle)
@@ -26,7 +23,6 @@
 # print(x,y)
 # print(move(0,0,5,3.1415))    #返回值的多个值其实是元组
 
-
 # # 一元二次方程的求根公式
 # import math   
 # def quadratic(a, b, c):
@@ -36,6 +32,7 @@
 
 # calculate1 ,calculate2 = quadratic(1, -2, 1)
 # print(calculate1,calculate2)
+
 
 
 
@@ -66,31 +63,23 @@
 # print(calc(*nums))
 
 
+# #这里是乱入的
+# import random
+# # 生成三个1000以内的随机数
+# random_numbers = [random.randint(1, 1000) for _ in range(3)]
+# # 打印生成的随机数
+# for num in random_numbers:
+#     if num > 99:
+#         print(num)
 
 
-
-#关键字参数
-
-
-
-
-import random
-
-# 生成三个1000以内的随机数
-random_numbers = [random.randint(1, 1000) for _ in range(3)]
-
-# 打印生成的随机数
-for num in random_numbers:
-    print(num)
+# #关键字参数
+# def person(name, age, **kw):
+#     print('name:', name, 'age:', age, 'other:', kw)
 
 
+# person('Alice', 30, city='New York', job='Engineer')
+# person('Bob', 35, city='Beijing')
 
-
-
-
-
-
-
-
-
+# 命名关键字参数
 
