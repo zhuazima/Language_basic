@@ -19,7 +19,7 @@ int main()
 	cout << p[1] << endl;
 
 	int arr1[2][3];
-	int(&p1)[2][s3] = arr1;
+	int(&p1)[2][3] = arr1;
 	arr1[1][2] = 78;
 	cout << p1[1][2] << endl;
 
