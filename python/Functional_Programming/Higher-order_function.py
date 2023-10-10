@@ -1,0 +1,13 @@
+#map & reduce 
+
+
+
+
+
+#filter 
+
+
+
+
+
+#sorted
