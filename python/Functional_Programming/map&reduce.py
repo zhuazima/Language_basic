@@ -86,18 +86,5 @@ print(str2float('0'))
 print(str2float('123.456'))
 print(str2float('123.45600'))
 
-
-
-
-#filter 
-def is_odd(n):
-    return n % 2 == 1
-
-print(list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15])))
-
-
-
-
-
-#sorted
-
+integer_value = int('741258963')
+print(integer_value)
