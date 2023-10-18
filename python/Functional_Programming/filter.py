@@ -19,9 +19,19 @@ def primes():
 
 # 打印1000以内的素数:
 for n in primes():
-    if n < 100000000:
+    if n < 1000:
         print(n)
     else:
         break
+
+
+
+
+# 筛选是不是回文数
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+out_list = filter(is_palindrome,range(1,100))
+print(list(out_list))
 
     
