@@ -18,9 +18,7 @@ class Student(object):
 st1 = Student('alice ',88)
 
 print(st1.score)
-print(st1.get_grade)
-
-
+print(st1.get_grade())
 
 
 
