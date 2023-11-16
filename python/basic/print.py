@@ -7,3 +7,4 @@ def input_output_function():
 
 # 调用函数
 input_output_function()
+
