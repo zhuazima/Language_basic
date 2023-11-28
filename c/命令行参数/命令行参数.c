@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//int argc是参数的个数
-//char* argv[]是参数的值，每个值都是一个字符串
+//int argc鏄弬鏁扮殑涓暟
+//char* argv[]鏄弬鏁扮殑鍊硷紝姣忎釜鍊奸兘鏄竴涓瓧绗︿覆
+
 int main(int argc, char* argv[])
 {
 	printf("%s\n", argv[0]);

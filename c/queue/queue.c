@@ -167,10 +167,11 @@ int main()
 	}
 
 
-	while (QueueDataLen(A_queue))
+	while(QueueDataLen(A_queue))
 	{
         QueueDataOut(A_queue,&data_temp);
 		printf("data = 0x%x ",data_temp);
+		sleep(1000);
 
 	}
 

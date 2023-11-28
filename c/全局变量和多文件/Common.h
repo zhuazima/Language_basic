@@ -6,9 +6,9 @@
 #include "a.h"
 #include "b.h"
 
-//ÕâÀïÃ»ÓÐ¸³Öµ£¬Ö»ÊÇÈ«¾Ö±äÁ¿µÄÉùÃ÷¶ø²»ÊÇ¶¨Òå
-//¶¨ÒåµÄ»°£¬Ö»ÄÜÓÐÒ»´Î£¬ÔÚmain.c
-//²»¼ÓexternÒ²¿ÉÒÔ£¬µ«ÊÇÒ»°ã¼ÓÉÏ
+//è¿™é‡Œæ²¡æœ‰èµ‹å€¼ï¼Œåªæ˜¯å…¨å±€å˜é‡çš„å£°æ˜Žè€Œä¸æ˜¯å®šä¹‰
+//å®šä¹‰çš„è¯ï¼Œåªèƒ½æœ‰ä¸€æ¬¡ï¼Œåœ¨main.c
+//ä¸åŠ externä¹Ÿå¯ä»¥ï¼Œä½†æ˜¯ä¸€èˆ¬åŠ ä¸Š
 extern int a;
 extern int b;
 
