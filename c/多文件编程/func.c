@@ -1,4 +1,5 @@
-#include"jisuan.h"
+
+#include"func.h"
 
 
 
