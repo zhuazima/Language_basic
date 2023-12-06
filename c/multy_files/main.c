@@ -6,7 +6,9 @@
 int main()
 {
 	printf("ON GOING \r\n");
-	printf("%d,%d", sum(2, 3), mul(4, 5));
+	printf("%d,%d", sum(2,3), mul(4,5));
 	
+
+	system("pause");
 	return 0;
 }
