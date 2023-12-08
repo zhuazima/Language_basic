@@ -20,17 +20,18 @@ def main():
         jlink.set_speed(1000)  # 设置速度为 1000 kHz
         jlink.connect(chip_name)
 
-        data_list = jlink.memory_read64(0x00000040, 0x100)
-        for i in range(len(data_list)):
-            hex_data = hex(data_list[i])
-            print(hex_data)
-            i = i + 1
 
-        # if len(data_list) > 0:
-        #     hex_data = hex(data_list[0])
-        #     print(hex_data)
-        # else:
-        #     print("No data returned")
+        # 读取内存
+        data_list = jlink.memory_read64(0x00000040, 0x100)
+
+        if len(data_list) > 0:
+            for i in range(len(data_list)):
+                hex_data = hex(data_list[i])
+                print(hex_data)
+                i = i + 1
+        else:
+            print("No data returned")
+
 
         # # 设置速度和目标设备
         # jlink.set_speed(1000)  # 设置速度为 1000 kHz
