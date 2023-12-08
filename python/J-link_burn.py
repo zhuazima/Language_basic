@@ -7,8 +7,7 @@ chip_name = 'Cortex-M0'
 # 烧录
 def flash_hex_file(jlink,file_path):
     try:
-        # 烧录 .hex 文件
-        jlink.flash_file(file_path,0x00000000)  # 替换为你的 .hex 文件路径
+        jlink.flash_file(file_path,0x00000000) # 烧录 .hex 文件
     except pylink.errors.JLinkException as e:
         print("JLinkException:", e)
     except Exception as ex:
