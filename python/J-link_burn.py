@@ -9,6 +9,10 @@ from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
 
+# import logging
+# logging.basicConfig(level=logging.DEBUG)
+
+
 hex_file_path = "D:/svn/Peacock/TCSDK/tools/BusTransceiver_V1.0.0.1/BootloaderV2/bootloader_V2.1.0.0.hex"
 chip_name = 'Cortex-M0'
 
@@ -37,7 +41,6 @@ def read_memory(jlink,memory_address,date_len):
         for i in range(len(data_list)):
             hex_data = hex(data_list[i])
             print(hex_data)
-            i = i + 1
     else:
         print("No data returned")    
 
@@ -73,7 +76,15 @@ if __name__ == "__main__":
     # erase
     # print(jlink.memory_write32(0x00FF00f8,[0x76543210]))
     # print(jlink.memory_write32(0x00000040,[0x12345678,0x55467913]))
+    # jlink.halt()
+    # # jlink.unlock()
     # print(jlink.erase())
+
+    # addr = 0x00000000
+    # region_size = 0xffff
+    # data = [1] * region_size
+    # jlink.flash_write(addr, data, 16)
+
 
     #烧录
     flash_hex_file(jlink,hex_file_path)
