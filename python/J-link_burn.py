@@ -21,6 +21,13 @@ def flash_hex_file(jlink,file_path):
     except Exception as ex:
         print("Exception:", ex)
 
+    # # 模拟烧录进度
+    # with tqdm(total=48, desc="Flash Programming", unit="a", unit_scale=True) as pbar:
+    #     # 模拟烧录过程，每次写入 10 个字节
+    #     for i in range(48 // 4):
+    #         time.sleep(0.1)  # 模拟写入的时间
+    #         pbar.update(4)  # 更新进度条
+
 
 # 读取内存
 def read_memory(jlink,memory_address,date_len):
@@ -66,7 +73,7 @@ if __name__ == "__main__":
     # erase
     # print(jlink.memory_write32(0x00FF00f8,[0x76543210]))
     # print(jlink.memory_write32(0x00000040,[0x12345678,0x55467913]))
-    print(jlink.erase())
+    # print(jlink.erase())
 
     #烧录
     flash_hex_file(jlink,hex_file_path)
