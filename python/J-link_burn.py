@@ -1,9 +1,15 @@
 import pylink
-import ctypes, os, sys
+
 from tqdm import tqdm
+import os
+import time
+import tkinter as tk
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+from tkinter import filedialog
 
-hex_file_path = "D:/svn/Peacock/Release/keil/TCPL01_AUTO_SDK_V1.0.11/tools/BusTransceiver_V1.0.0.1/BootloaderV2/bootloader_v2.0.0.5.hex"  # 替换为你的 .hex 文件路径
-
+hex_file_path = "D:/svn/Peacock/TCSDK/tools/BusTransceiver_V1.0.0.1/BootloaderV2/bootloader_V2.1.0.0.hex"
 chip_name = 'Cortex-M0'
 
 # 烧录
@@ -47,16 +53,23 @@ if __name__ == "__main__":
     except Exception as ex:
         print("Exception:", ex)
 
-    #读取
-    read_memory(jlink,0x00000040,0x02)
+
+    # 读取芯片信息
+    print('ARM Id: %d' % jlink.core_id())
+    print('CPU Id: %d' % jlink.core_cpu())
+    print('Core Name: %s' % jlink.core_name())
+    print('Device Family: %d' % jlink.device_family())
+
+    #读取flash
+    read_memory(jlink,0x00000000,0x02)
 
     # erase
     # print(jlink.memory_write32(0x00FF00f8,[0x76543210]))
     # print(jlink.memory_write32(0x00000040,[0x12345678,0x55467913]))
-    # print(jlink.erase())
+    print(jlink.erase())
 
     #烧录
-    # flash_hex_file(jlink,hex_file_path)
+    flash_hex_file(jlink,hex_file_path)
 
     # 断开连接
     disconnect_jlink(jlink)
