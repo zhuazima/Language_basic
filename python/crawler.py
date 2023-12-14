@@ -34,7 +34,7 @@ def download_images(url):
         print("Failed to fetch the page.")
 
 # 要爬取的网页 URL
-url_to_crawl = 'https://www.bing.com/images/search?q=%e5%9b%be%e7%89%87&qpvt=%e5%9b%be%e7%89%87&form=IGRE&first=1'
+url_to_crawl = 'https://github.com/'
 
 # 调用函数并传入网址
 download_images(url_to_crawl)
