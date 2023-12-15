@@ -6,9 +6,9 @@ void exchange(int& , int& );
 int main()
 {
 	int a = 12, b = 24;
-	cout << a << b << endl;
+	cout << a << ' ' << b << endl;
 	exchange(a, b);
-	cout << a << b << endl;
+	cout << a << ' ' << b << endl;
 
 
 	return 0;
