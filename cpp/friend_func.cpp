@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+
 class cStu
 {
 	int age = 12;
@@ -11,6 +12,15 @@ class cStu
 	friend void fun1();
 	friend class cTeach;
 };
+
+void fun1()
+{
+	cStu St;
+	St.fun();
+
+	St.age = 13;
+	St.fun();
+}
 
 class cTeach
 {
@@ -23,14 +33,6 @@ public:
 	}	
 };
 
-void fun1()
-{
-	cStu St;
-	St.fun();
-
-	St.age = 13;
-	St.fun();
-}
 
 int main()
 {
