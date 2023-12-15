@@ -15,7 +15,7 @@ public:
 	void show()const	
 	{
 		
-		//a = 10;
+		// a = 5;
 		int i;
 		i = 20;
 		cout << i << endl;
