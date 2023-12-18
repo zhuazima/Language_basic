@@ -9,9 +9,9 @@ def run_progressbar():
     
     # Function that simulates a process with tqdm
     def simulate_process():
-        for _ in tqdm(range(100), desc="Progress"):
+        for _ in tqdm(range(10), desc="Progress"):
             time.sleep(0.1)
-            progress_bar["value"] += 1
+            progress_bar["value"] += 10
             root.update_idletasks()
 
     # Start the process simulation
