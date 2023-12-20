@@ -1,51 +1,35 @@
 #include <iostream>
 using namespace std;
 
+/*定义类*/
 class cStu
 {
 public:
-	int age;
+	double length;
 	float height;
-	int* p;
+	int a;
 
-	//int a;
-	//cStu(int a)
-	//{
-	//	this->a = a;
-	//}
-
-	//cStu* GetAddr()
-	//{
-	//	return this;:  *this
-	//}
-
-	cStu( int* &p)
-	{
-		p = new int(10);
-	}
-	
-	~cStu()
-	{
-		delete  p;
-	}
-
-		
-
+	cStu(double len);
+	~cStu();    //析构函数在退出函数的时候会把实例占用的资源释放
 };
 
+/*函数定义*/
+cStu::cStu(double len)
+{
+	length = len;
+	cout << "Object is being created" << endl;
+}
+
+cStu::~cStu()
+{
+	cout << "Object is being deleted" << endl;
+}
 
 
-
+/*function main*/
 int main()
 {
-	int* pp = NULL;
-	{
-		cStu St(pp);
-	}
-	
-	cout << *pp << endl;
-
-
-
+    cStu st(5);
+	cout << st.length << endl;
 	return 0;
 }

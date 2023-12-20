@@ -2,18 +2,21 @@
 using namespace std;
 
 
-
+/*类的定义*/
 class Stu
 {
 public:
 	int a;
 	int b;
-	Stu();    //构造函数，用来初始化类的成员
+    void set_length(double len);
+	double get_length(void);
 
+	Stu();    //构造函数，用来初始化类的成员
 	private:
 	    int length;
 };
 
+/*成员函数定义，包括构造函数*/
 Stu::Stu()    //定义构造函数
 {
 	a = 1;
