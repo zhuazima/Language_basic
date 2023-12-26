@@ -15,7 +15,7 @@ public:
 	void ShowData();
 
 	/*定义友元函数和友元类*/
-	friend void FriendFunc();  //友元函数没有 this 指针
+	friend void FriendFunc();  //友元函数没有 this 指针,因为它不是类的成员
 	friend class cTeach;
 private:
     int FamilyNumber = 4;
@@ -30,7 +30,13 @@ int main()
 {
     
    cStu stu;
+   cStu *p_stu;
    stu.ShowData();
+
+   p_stu = &stu;     //
+   p_stu->age = 19;
+   p_stu->height = 18.2;
+   p_stu->ShowData();
 
 
 	return 0;
