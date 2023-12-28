@@ -1,5 +1,6 @@
 /***********************************************************************************************************************************
 继承基类成员：可以继承public 和 protected
+
 继承方式：
 ***********************************************************************************************************************************/
 
@@ -10,19 +11,25 @@ using namespace std;
 class cPeople
 {
 public:
-		void father_func()
-		{
-			cout << "father class" << endl;
-		}
+    int age = 10;
+	float height = 181.12;
+
+	void father_func()
+	{
+		cout << "father class" << endl;
+	}
 };
 
-class cChildren:public cPeople
+
+
+class cChildren :public cPeople
 {
 public:
 	void son_func()
 	{
-		cout << "son class";
-	    father_func();
+		cout << "son class " << endl;
+        cout << "age = " << age << ' ' << "height = " << height << endl;
+		father_func();
 	}
 
 
@@ -32,7 +39,6 @@ public:
 int main()
 {
 	cChildren cCh;
-	cCh.father_func();
 	cCh.son_func();
 
 	return 0;
