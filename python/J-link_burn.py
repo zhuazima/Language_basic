@@ -70,14 +70,15 @@ if __name__ == "__main__":
     print('Device Family: %d' % jlink.device_family())
 
     #读取flash
-    read_memory(jlink,0x00000000,1)   # read nvm
-    # read_memory(jlink,0x00800694,1) # vbat trim value , 读去 nvr 代码擦掉再去读，不然有锁读不了
+    # read_memory(jlink,0x00000000,1)   # read nvm
+    read_memory(jlink,0x00800694,1) # vbat trim value , 读去 nvr 代码擦掉再去读，不然有锁读不了
     # read_memory(jlink,0x00800858,1) # x corner
     # read_memory(jlink,0x0080085C,1) # y corner
 
     # erase
     # print(jlink.memory_write32(0x00FF00f8,[0x76543210]))
-    # print(jlink.memory_write32(0x00000040,[0x12345678,0x55467913]))
+    # print(jlink.
+    # memory_write32(0x00000040,[0x12345678,0x55467913]))
     # jlink.halt()
     # # jlink.unlock()
     # print(jlink.erase())

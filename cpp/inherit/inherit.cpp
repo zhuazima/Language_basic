@@ -1,32 +1,39 @@
 /***********************************************************************************************************************************
-
-
+继承基类成员：可以继承public 和 protected
+继承方式：
 ***********************************************************************************************************************************/
 
 
 #include <iostream>
 using namespace std;
 
-class cStu
+class cPeople
 {
 public:
-	int age;
-	float height;
-	int& a;
-	const int b;
-	cStu() :age(10), height(180.69f),a(age),b(250)
-	{
-		//age = 18;
-	}
+		void father_func()
+		{
+			cout << "father class" << endl;
+		}
 };
+
+class cChildren:public cPeople
+{
+public:
+	void son_func()
+	{
+		cout << "son class";
+	    father_func();
+	}
+
+
+};
+
 
 int main()
 {
-	cStu* pSt = new cStu;
-	cout << pSt->age << endl;
-	cout << pSt->height << endl;
-	cout << pSt->a << endl;
-	cout << pSt->b << endl;
+	cChildren cCh;
+	cCh.father_func();
+	cCh.son_func();
 
 	return 0;
 }

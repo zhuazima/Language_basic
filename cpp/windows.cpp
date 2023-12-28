@@ -1,67 +1,42 @@
 #include <windows.h>
-#include <tchar.h>
 
-LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow) {
-    static TCHAR szAppName[] = TEXT("UpperCaseConverter");
-    HWND hwnd;
-    MSG msg;
-    WNDCLASS wndclass;
-
-    wndclass.style = CS_HREDRAW | CS_VREDRAW;
-    wndclass.lpfnWndProc = WndProc;
-    wndclass.cbClsExtra = 0;
-    wndclass.cbWndExtra = 0;
-    wndclass.hInstance = hInstance;
-    wndclass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-    wndclass.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wndclass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
-    wndclass.lpszMenuName = NULL;
-    wndclass.lpszClassName = szAppName;
-
-    if (!RegisterClass(&wndclass)) {
-        MessageBox(NULL, TEXT("This program requires Windows NT!"), szAppName, MB_ICONERROR);
-        return 0;
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+    switch (uMsg) {
+        case WM_DESTROY:
+            PostQuitMessage(0);
+            return 0;
+        default:
+            return DefWindowProc(hwnd, uMsg, wParam, lParam);
     }
+}
 
-    hwnd = CreateWindow(szAppName, TEXT("UpperCaseConverter"), WS_OVERLAPPEDWINDOW,
-        CW_USEDEFAULT, CW_USEDEFAULT, 300, 200, NULL, NULL, hInstance, NULL);
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+    WNDCLASSW wc = { 0 };
+    wc.lpfnWndProc = WindowProc;
+    wc.hInstance = hInstance;
+    wc.lpszClassName = L"MyWindowClass";
 
-    ShowWindow(hwnd, iCmdShow);
-    UpdateWindow(hwnd);
+    RegisterClassW(&wc);
 
+    HWND hwnd = CreateWindowExW(
+        0,
+        L"MyWindowClass",
+        L"My Window",
+        WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, CW_USEDEFAULT, 800, 600,
+        NULL, NULL, hInstance, NULL
+    );
+
+    if (hwnd == NULL)
+        return 0;
+
+    ShowWindow(hwnd, nCmdShow);
+
+    MSG msg;
     while (GetMessage(&msg, NULL, 0, 0)) {
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
-    return msg.wParam;
-}
 
-LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-    HDC hdc;
-    PAINTSTRUCT ps;
-    RECT rect;
-
-    switch (message) {
-    case WM_CREATE:
-        return 0;
-    case WM_PAINT:
-        hdc = BeginPaint(hwnd, &ps);
-        GetClientRect(hwnd, &rect);
-        DrawText(hdc, TEXT("Type a character to convert to uppercase!"), -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
-        EndPaint(hwnd, &ps);
-        return 0;
-    case WM_CHAR:
-        if (isalpha(wParam)) {
-            TCHAR upperChar = (TCHAR)toupper(wParam);
-            TCHAR str[2] = { upperChar, '\0' };
-            MessageBox(hwnd, str, TEXT("Uppercase Character"), MB_OK | MB_ICONINFORMATION);
-        }
-        return 0;
-    case WM_DESTROY:
-        PostQuitMessage(0);
-        return 0;
-    }
-    return DefWindowProc(hwnd, message, wParam, lParam);
+    return 0;
 }
