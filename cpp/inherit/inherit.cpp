@@ -21,7 +21,7 @@ public:
 };
 
 
-
+/*公共继承类型是最常用的*/
 class cChildren :public cPeople
 {
 public:

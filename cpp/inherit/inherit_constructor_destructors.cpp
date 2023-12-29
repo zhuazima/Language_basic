@@ -21,7 +21,7 @@ public:
 
 };
 
-class cFather : cGrandfather
+class cFather : public cGrandfather
 {
 public:
 	cFather()
@@ -35,7 +35,7 @@ public:
 
 };
 
-class cSon : public cFather
+class cSon : cFather
 {
 public:
 	cSon()
