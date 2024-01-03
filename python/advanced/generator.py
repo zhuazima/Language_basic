@@ -1,5 +1,4 @@
 
-# 保存的是算法
 
 g = (x * x for x in range(10))
 
