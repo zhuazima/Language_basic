@@ -9,19 +9,12 @@ def to_timestamp(dt_str, tz_str):
     try:
         time_zone = re.match(pattern,tz_str)
         if(time_zone.group(1)):
-             time_zone_value = int(time_zone.group(1))
+             time_zone_value = int(time_zone.group(1))    # 获得时区数字
     except Exception as e:
         print('input error ')
-
-    # cday = cday.replace(tzinfo=timezone.utc)
-    cday = cday.astimezone(timezone(timedelta(hours=time_zone_value)))
-
-    print(cday.timestamp())
+    cday = cday - timedelta(hours = time_zone_value - 8)    # 转换成 utc+8:00 时间
 
     return cday.timestamp()
-
-    
-
 
 
 # 测试:
