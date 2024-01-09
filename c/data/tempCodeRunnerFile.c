@@ -1,0 +1,2 @@
+
+	char enter = '\n';
