@@ -40,7 +40,11 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "stdio.h": "c"
     },
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "cSpell.words": [
+        "ascll"
+    ]
 }
