@@ -41,7 +41,10 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "limits.h": "c",
+        "stdlib.h": "c",
+        "float.h": "c"
     },
     "window.zoomLevel": 1,
     "cSpell.words": [

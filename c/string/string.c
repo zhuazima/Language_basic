@@ -12,12 +12,9 @@ int main()
     if('\0' == 0)   printf("equal\n");    //它的 ascll 码值是0
 
     /*比较strlen 和 sizeof */
-    printf("%zd,%zd,%zd\n",sizeof("x"),sizeof('x'),strlen("x"));
-
     char name[40] = "what's your name?";
-    printf("%s",name);
-
-
+    printf("%s\n",name);
+    printf("%zd,%zd\n",sizeof(name),strlen(name));   //strlen 实际的长度，sizeof 是数组的长度
 
     return 0;
 }
