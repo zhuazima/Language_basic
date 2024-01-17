@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+#include <float.h>
 
 int main(void)
 {
@@ -15,13 +17,12 @@ int main(void)
 	p = &b;
 	printf("%d\n", *p);
 
-	int* const
 	int* const p = &a;
 
 	// int const* const p
 	const int* const p = &a;
-	*p = 12;
-	p = &b;
+	// *p = 12;
+	// p = &b;
 
 
 	return 0;
