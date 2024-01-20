@@ -16,6 +16,10 @@ int main()
     printf("%s\n",name);
     printf("%zd,%zd\n",sizeof(name),strlen(name));   //strlen 实际的长度，sizeof 是数组的长度
 
+    /*字符串空间如果不给 \0 分配空间会有问题*/
+    char test_string[3] = "aha";
+    printf("%s",test_string);    //会有多余的打印出来 ： ahawhat's your name?
+
     return 0;
 }
 

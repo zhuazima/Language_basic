@@ -6,8 +6,8 @@
 
 int main()
 {
-    char c = 0;
-    c = 330;
+    int c = 0;
+    c = 12.3;
 
     printf("%d\n",c);
 
