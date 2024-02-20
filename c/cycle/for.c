@@ -1,15 +1,17 @@
-/*
-  for 循环，方便给计数器设置初始值和递增
-  
-*/
+/* for_geo.c */
 
 #include <stdio.h>
 
 int main(void)
+
 {
-    const int NUMBER = 22;
-    int count;
-    for (count = 1; count <= NUMBER; count++)
-    printf("Be my Valentine!\n");
-    return 0;
+
+double debt;
+
+for (debt = 100.0; debt < 150.0; debt = debt * 1.1)
+
+printf("Your debt is now $%.2f.\n", debt);
+
+return 0;
+
 }
