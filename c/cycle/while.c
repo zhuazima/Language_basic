@@ -1,3 +1,5 @@
+//while 是入口条件循环
+
 // #include<stdio.h>
 // #include<stdlib.h>
 // #include <math.h>

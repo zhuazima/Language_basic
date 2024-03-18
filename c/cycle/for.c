@@ -1,3 +1,5 @@
+// for 循环是不定条件循环
+
 #include  <stdio.h>
 
 int  main(void)
